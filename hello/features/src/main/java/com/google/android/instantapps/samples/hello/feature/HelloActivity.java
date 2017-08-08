@@ -21,6 +21,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 /**
  * This Activity displays a simple hello world text and a button to open the GoodbyeActivity.
  */
@@ -29,6 +33,7 @@ public class HelloActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_hello);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,5 +42,4 @@ public class HelloActivity extends AppCompatActivity {
             }
         });
     }
-
 }

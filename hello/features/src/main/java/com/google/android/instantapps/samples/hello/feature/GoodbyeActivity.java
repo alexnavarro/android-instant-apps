@@ -19,6 +19,8 @@ package com.google.android.instantapps.samples.hello.feature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.crashlytics.android.Crashlytics;
+
 /**
  * Simple activity that says goodbye.
  * */
@@ -28,5 +30,7 @@ public class GoodbyeActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_goodbye);
+
+    Crashlytics.getInstance().crash();
   }
 }
